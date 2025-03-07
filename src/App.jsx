@@ -1,27 +1,17 @@
 // src/App.jsx
+import './App.css';
+import BookShelf from './components/Bookshelf/BookShelf.jsx';
 
 const App = () => {
-  const [title, setTitle] = useState('The full name will appear here.');
-  const [firstName, setFirstName] = useState('');
-
-  // when invoked, update the firstName state to equal the new value 
-  const handleFirstNameChange = (event) => {
-    setFirstName(event.target.value);
-  };
+  // If you need to log for debugging, do it outside of the return block.
+  console.log(BookShelf);
 
   return (
     <>
-      <h2>{title}</h2>
-      <form>
-        <label htmlFor="firstName">First Name: </label>
-        <input
-          id="firstName"
-          name="firstName"
-          value={firstName}
-          onChange={handleFirstNameChange}
-        />
-      </form>
+      <h1>My Bookshelf</h1>
+      <BookShelf /> {/* Correctly rendering the BookShelf component */}
     </>
   );
 };
 
+export default App;
